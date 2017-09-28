@@ -16,7 +16,7 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 		String response = null;
 		try {
 			Connection connection = getConnection();
-			PreparedStatement stmt = connection.prepareStatement("SELECT response FROM chatbotdb WHERE lower(keyword) like lower(concat('%', ?, '%'));");
+			PreparedStatement stmt = connection.prepareStatement("SELECT response FROM greetings WHERE lower(concat('%',keyword, '%')) LIKE lower(concat('%', ?, '%'));");
 			stmt.setString(1, text);
 			ResultSet rs = stmt.executeQuery();
 			if (!rs.next()) throw new Exception("I said you find nothing here lol");
@@ -39,18 +39,18 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 		String username;
 		String password;
 		String dbUrl;
-		/*
-		if(LOCAL) {
+		
+		if(true) {
 			username="postgres";
-			password="thisismypassword";
+			password="5tere0150mer";
 			dbUrl="jdbc:postgresql://localhost:5432/chatbotDB";
 		}else
-		*/
-		//{
+		
+		{
 			username = dbUri.getUserInfo().split(":")[0];
 			password = dbUri.getUserInfo().split(":")[1];
 			dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() +  "?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
-		//}
+		}
 		log.info("Username: {} Password: {}", username, password);
 		log.info ("dbUrl: {}", dbUrl);
 		

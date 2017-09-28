@@ -68,13 +68,13 @@ public class KitchenSinkTester {
 		boolean thrown = false;
 		String result = null;
 		try {
-			result = this.databaseEngine.search("Hello");
+			result = this.databaseEngine.search("How old are you?");
 		} catch (Exception e) {
 			thrown = true;
 			throw e;
 		}
 		assertThat(!thrown).isEqualTo(true);
-		assertThat(result).isEqualTo("Hello from the other side");
+		assertThat(result).isEqualTo("Soon I'll be 60 years old");
 	}
 	
 	@Test
