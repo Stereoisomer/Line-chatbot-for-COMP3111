@@ -39,18 +39,18 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 		String username;
 		String password;
 		String dbUrl;
-		
+		/*
 		if(true) {
 			username="postgres";
 			password="5tere0150mer";
 			dbUrl="jdbc:postgresql://localhost:5432/chatbotDB";
 		}else
-		
-		{
+		*/
+		//{
 			username = dbUri.getUserInfo().split(":")[0];
 			password = dbUri.getUserInfo().split(":")[1];
 			dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() +  "?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
-		}
+		//}
 		log.info("Username: {} Password: {}", username, password);
 		log.info ("dbUrl: {}", dbUrl);
 		
