@@ -74,7 +74,7 @@ public class KitchenSinkTester {
 			throw e;
 		}
 		assertThat(!thrown).isEqualTo(true);
-		assertThat(result).isEqualTo("Soon I'll be 60 years old");
+		assertThat(result).isEqualTo("Soon i'll be 60 years old");
 	}
 	
 	@Test
@@ -82,7 +82,7 @@ public class KitchenSinkTester {
 		boolean thrown = false;
 		String result = null;
 		try {
-			result = this.databaseEngine.search("Bye");
+			result = this.databaseEngine.search("Goodbye");
 		} catch (Exception e) {
 			thrown = true;
 			throw e;
