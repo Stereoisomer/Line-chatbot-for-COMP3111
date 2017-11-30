@@ -7,16 +7,24 @@ import java.util.List;
  */
 class Student {
     //TODO: change he following descriptions of the fields into doc comment
-    //This is the student ID
+    /**
+	 * This is the student ID
+	 */
     String stuID;
-    //This is the name of the student
+    /**
+	 * This is the name of the student
+	 */
     String name;
-    //This is the GPA of the student
+    /**
+	 * This is the GPA of the student
+	 */
     float GPA;
 
-    /* TODO: change this comment block to doc comment. (Remember to add explanation for the parameters)
+    /**
      * This method is the constructor of a Student object. You can use this method to construct a Student.
-     * The parameters include a {@link String} to represent student ID, a {@link String} to name and a double to represent GPA score of the student.
+     * @param stuID {@link #stuID} student ID
+	 * @param name {@link #name} name of student
+	 * @param GPA GPA score of the student
      */
     public Student(String stuID, String name, float GPA) {
         this.stuID = stuID;
@@ -40,16 +48,16 @@ class Student {
         return name;
     }
 
-    /*TODO: change this comment block to doc comment. (Remember to add explanation for the return value)
+    /**
      * Returns the GPA score of the Student
-     *
+     * @return GPA of the student
      */
     public float getGPA() {
         return GPA;
     }
 
     /**
-     *Sets the GPA score of the Student to the new GPA score specified by the parameter GPA
+     * Sets the GPA score of the Student to the new GPA score specified by the parameter GPA
      * @param GPA the new GPA score of the student
      */
     public void setGPA(float GPA) {
@@ -66,28 +74,27 @@ class Student {
     }
 }
 
-/* TODO: change this comment block to doc comment and add your own information to @author and @since
+/** @author and @since
  * This class is the major class for the JavaDoc Lab in COMP3111
  *
- * @author PUT_YOUR_NAME_HERE
- * @since PUT_THE_DATE_OF_YOUR_LAB_SESSION
+ * @author clleungae
+ * @since 24/11/2017
  */
 public class JavaDocLab {
 
-    /*TODO: change this comment block to doc comment. (Remember to add explanation for the parameters)
-     *
+    /**
      * This method sort the students in a student list (parameter) by their student ID in alphabetical order
-     * It takes the student list as parameter and sorts the input list.
+	 * @param studentList list of students
      */
     public static void sortByStuId(List<Student> studentList) {
 
     }
 
 
-    /**TODO: Please check the code of this method and write the contents of the JavaDoc for this method (Remeber to include explanations for the parameter and return value)
-     *
-     *
-     *
+    /**
+     * This method get the student with the highest GPA score among all students input in parameter
+     * @param studentList list of students to compare
+     * @return the student with highest GPA
      */
     public static Student getHighestGPA(List<Student> studentList) {
         float max = -1f;
